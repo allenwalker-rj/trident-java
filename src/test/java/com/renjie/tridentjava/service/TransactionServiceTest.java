@@ -6,29 +6,27 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.tron.trident.proto.Response;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
-class AccountServiceTest {
+class TransactionServiceTest {
 
     @Autowired
-    private AccountService accountService;
+    private TransactionService transactionService;
 
     @Autowired
     private CommonConfig config;
 
     @Autowired
     private SecondConfig secondConfig;
-    @Test
-    void getAccount1() {
-        Response.Account account = accountService.getAccount(config.getAddress());
-        log.info("account:{}", account);
-    }
 
     @Test
-    void getAccount2(){
-        Response.Account account = accountService.getAccount(secondConfig.getPrivateKey());
-        log.info("account:{}", account);
+    void transferTRX() {
+        String fromAddress = config.getAddress();
+        String toAddress = secondConfig.getAddress();
+        int amount = 2000;
+        transactionService.transferTRX(fromAddress, toAddress, amount);
     }
 }

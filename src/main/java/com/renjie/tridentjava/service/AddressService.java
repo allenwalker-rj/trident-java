@@ -16,7 +16,7 @@ public class AddressService {
 
     public AddressDto generate(){
         KeyPair keyPair = KeyPair.generate();
-        log.info("生成 keyPair: {}", keyPair.toString());
+        log.info("生成 keyPair: {}", keyPair);
         return AddressDto.builder()
                 .address(keyPair.toBase58CheckAddress())
                 .hexAddress(keyPair.toHexAddress())
