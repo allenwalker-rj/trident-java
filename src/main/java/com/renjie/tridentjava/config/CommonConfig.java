@@ -18,4 +18,10 @@ public class CommonConfig {
     private String privateKey;
     private String publicKey;
     private String hexAddress;
+
+    private String address2;
+    private String privateKey2;
+
+    private String address3;
+    private String privateKey3;
 }

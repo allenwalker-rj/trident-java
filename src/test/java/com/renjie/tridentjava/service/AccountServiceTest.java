@@ -1,7 +1,6 @@
 package com.renjie.tridentjava.service;
 
 import com.renjie.tridentjava.config.CommonConfig;
-import com.renjie.tridentjava.config.SecondConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +17,9 @@ class AccountServiceTest {
     @Autowired
     private CommonConfig config;
 
-    @Autowired
-    private SecondConfig secondConfig;
     @Test
     void getAccount1() {
         Response.Account account = accountService.getAccount(config.getAddress());
-        log.info("account:{}", account);
-    }
-
-    @Test
-    void getAccount2(){
-        Response.Account account = accountService.getAccount(secondConfig.getPrivateKey());
         log.info("account:{}", account);
     }
 }

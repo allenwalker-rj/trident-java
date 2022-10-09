@@ -26,7 +26,7 @@ class AddressServiceTest {
 
     @Test
     void testGetKeyPair(){
-        KeyPair keyPair = addressService.getKeyPairWithPrivateKey(config.getPrivateKey());
+        KeyPair keyPair = addressService.getKeyPairWithPrivateKey(config.getPrivateKey2());
         log.info("keyPair:{}", keyPair.toString());
         log.info("keyPair.PrivateKey:{}", keyPair.toPrivateKey());
         log.info("keyPair.PublicKey:{}", keyPair.toPublicKey());
